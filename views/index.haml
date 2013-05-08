@@ -1,0 +1,11 @@
+.row
+  .large-12.columns
+    .panel
+      %h1 Welcome to Mirror-Board
+      %p
+        This is application demos using Google's Mirror API with Ruby to
+        subscribe to interact with a user Google Glass device.
+-unless @user_content.nil?
+  .row
+    .large-12.columns
+      = haml :posts, locals: { user_content: @user_content }

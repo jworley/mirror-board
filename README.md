@@ -1,4 +1,4 @@
-mirror-board
+Mirror-Board
 ============
 
-Google Glass demo project in Ruby
+Google Glass demo project in Ruby.

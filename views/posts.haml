@@ -1,0 +1,14 @@
+%ul.small-block-grid-2.large-block-grid-4
+  -user_content.each do |post|
+    %li
+      -if post.content_type.match(/image/)
+        %img{src: to("usercontent/#{post.user.username}/#{post.content_path}")}
+      -if post.content_type.match(/audio/)
+        %audio{controls: 'controls'}
+          %source{src: to("usercontent/#{post.user.username}/#{post.content_path}"), type: post.content_type}
+      -if post.content_type.match(/video/)
+        %video{controls: 'controls'}
+          %source{src: to("usercontent/#{post.user.username}/#{post.content_path}"), type: post.content_type}
+      %p
+        By:
+        %a{href: to("user/#{post.user.username}")}= post.user.username

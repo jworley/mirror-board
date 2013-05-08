@@ -1,0 +1,6 @@
+.row
+  .push-2.large-10.columns
+    = haml :posts, locals: { user_content: @posts }
+  .pull-10.large-2.columsn
+    .panel
+      %h2= "Posts by #{@user.username}"

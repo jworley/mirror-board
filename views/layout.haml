@@ -1,0 +1,43 @@
+!!! 5
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: 'viewport', content: 'width=device-width'}
+    %title Mirror-Board
+    %link{rel: 'stylesheet', href: to('css/normalize.css')}
+    %link{rel: 'stylesheet', href: to('css/foundation.css')}
+    /[if lt IE 9]
+      %script{src: 'http://html5shiv.googlecode.com/svn/trunk/html5.js'}
+    %script{src: to('js/vendor/custom.modernizr.js')}
+  %body
+    %nav.top-bar
+      %ul.title-area
+        %li.name
+          %h1
+            %a{href: '/'} Mirror-Board
+        %li.toggle-topbar.menu-icon
+          %a{href: '#'}
+            %span
+      %section.top-bar-section
+        %ul.right
+          %li.divider
+          %li.has-form
+            %a.button{href: to('/auth/google_oauth2')} Login with Google
+    - if flash.has? :info
+      .row
+        .large-12.columns
+          .alert-box.success= flash[:info]
+    - if flash.has? :error
+      .row
+        .large-12.columns
+          .alert-box.alert= flash[:error]
+    =yield
+    :javascript
+      document.write('<script src="' +
+      ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+      '.js"><\/script>')
+    %script{src: to('js/foundation.min.js')}
+    :javascript
+      $(function() {
+        $(document).foundation();
+      });

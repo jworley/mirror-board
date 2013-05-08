@@ -1,0 +1,5 @@
+.msg-text
+  The following errors occured saving user:
+  %ul
+    - errors.each do |error|
+      %li= error.join ', '
