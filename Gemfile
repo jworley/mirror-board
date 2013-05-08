@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'pry'
-gem 'shotgun'
-
 gem 'sinatra'
 gem 'haml'
 gem 'omniauth-google-oauth2'
